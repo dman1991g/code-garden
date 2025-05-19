@@ -5,14 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const backButton = document.getElementById('back-button');
   const pdfList = document.getElementById('pdf-list');
 
+  pdfViewer.style.display = 'none';
+  backButton.style.display = 'none';
+
   pdfLinks.forEach(link => {
     link.addEventListener('click', event => {
-      event.preventDefault(); // Prevent default link navigation
+      event.preventDefault();
 
       const pdfUrl = link.getAttribute('data-pdf');
       if (pdfUrl) {
         pdfFrame.src = pdfUrl;
-        pdfViewer.classList.remove('hidden');
+        pdfViewer.style.display = 'block';
+        backButton.style.display = 'inline-block';
         pdfList.style.display = 'none';
       }
     });
@@ -20,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   backButton.addEventListener('click', () => {
     pdfFrame.src = '';
-    pdfViewer.classList.add('hidden');
+    pdfViewer.style.display = 'none';
+    backButton.style.display = 'none';
     pdfList.style.display = 'block';
   });
 });

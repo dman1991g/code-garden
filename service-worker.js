@@ -7,7 +7,7 @@ const FILES_TO_CACHE = [
 
   // HTML PDFs
   "/HTML/Module+1-+Introduction+to+Software_Web+Development.pdf",
-  "/HTML/html-forms.pdf",
+  "/HTML/Module+2-+Intermediate_Advanced+HTML.pdf",
 
   // CSS PDFs
   "/CSS/css-basics.pdf",

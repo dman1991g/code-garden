@@ -6,7 +6,7 @@ const FILES_TO_CACHE = [
   "/style.css",         // styling
 
   // HTML PDFs
-  "/HTML/intro.pdf",
+  "/HTML/Module+1-+Introduction+to+Software_Web+Development.pdf",
   "/HTML/html-forms.pdf",
 
   // CSS PDFs

@@ -4,54 +4,63 @@
   <meta charset="UTF-8">
   <title>Web Dev PDF Library</title>
   <link rel="stylesheet" href="style.css">
-<link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <h1>Web Development PDF Library</h1>
 
-  <h2>HTML & CSS</h2>
-  <ul>
-    <li><a href="HTML/Module+1-+Introduction+to+Software_Web+Development.pdf" target="_blank">Intro to basic web development and basic HTML</a></li>
-    <li><a href="HTML/Module+2-+Intermediate_Advanced+HTML.pdf" target="_blank">Intermediate and Advanced HTML lessons</a></li>
-    <li><a href="CSS/Module+3+-+Introduction+to+CSS+Colors+Typography.pdf" target="_blank">intro to CSS,Color,Typography</a></li>
-    <li><a href="CSS/Module+4-+Animation_Bootstrap_Responsive+Design.pdf" target="_blank">Animation and Responsive Design</a></li>
-  </ul>
+  <div id="pdf-viewer" class="hidden">
+    <button id="back-button">← Back</button>
+    <iframe id="pdf-frame" src="" frameborder="0"></iframe>
+  </div>
 
-  <h2>JavaScript & jQuery</h2>
-  <ul>
-    <li><a href="Javascript/Module+9-+Intro+to+Javascript+.pdf" target="_blank">JavaScript Fundamentals part 1</a></li>
-    <li><a href="Javascript/Module+10-+Intro+to+Javascript.pdf" target="_blank">JavaScript Fundamentals part 2</a></li>
-    <li><a href="Javascript/Module+11-+Intermediate+Javascript+and+the+DOM.pdf" target="_blank">intermediate javascript and DOM Manipulation</a></li>
-    <li><a href="Javascript/Module+12-Intermediate+Javascript+Part+2-+Using+External+Libraries.pdf" target="_blank">jQuery</a></li>
-    <li><a href="Javascript/Module+13-Advanced+JavaScript-+Classes,+OOP+&+Algorithms.pdf" target="_blank">Advanced Javascript</a></li>
-  </ul>
+  <div id="pdf-list">
+    <h2>HTML & CSS</h2>
+    <ul>
+      <li><a href="HTML/Module+1-+Introduction+to+Software_Web+Development.pdf" data-pdf="HTML/Module+1-+Introduction+to+Software_Web+Development.pdf">Intro to basic web development and basic HTML</a></li>
+      <li><a href="HTML/Module+2-+Intermediate_Advanced+HTML.pdf" data-pdf="HTML/Module+2-+Intermediate_Advanced+HTML.pdf">Intermediate and Advanced HTML lessons</a></li>
+      <li><a href="CSS/Module+3+-+Introduction+to+CSS+Colors+Typography.pdf" data-pdf="CSS/Module+3+-+Introduction+to+CSS+Colors+Typography.pdf">Intro to CSS, Color, Typography</a></li>
+      <li><a href="CSS/Module+4-+Animation_Bootstrap_Responsive+Design.pdf" data-pdf="CSS/Module+4-+Animation_Bootstrap_Responsive+Design.pdf">Animation and Responsive Design</a></li>
+    </ul>
 
-  <h2>React</h2>
-  <ul>
-    <li><a href="Wordpress and react/Module+15-Front-end+Frameworks+++CMS.pdf" target="_blank">Front end frameworks and CMS</a></li>
-  </ul>
+    <h2>JavaScript & jQuery</h2>
+    <ul>
+      <li><a href="Javascript/Module+9-+Intro+to+Javascript+.pdf" data-pdf="Javascript/Module+9-+Intro+to+Javascript+.pdf">JavaScript Fundamentals part 1</a></li>
+      <li><a href="Javascript/Module+10-+Intro+to+Javascript.pdf" data-pdf="Javascript/Module+10-+Intro+to+Javascript.pdf">JavaScript Fundamentals part 2</a></li>
+      <li><a href="Javascript/Module+11-+Intermediate+Javascript+and+the+DOM.pdf" data-pdf="Javascript/Module+11-+Intermediate+Javascript+and+the+DOM.pdf">Intermediate JavaScript and DOM Manipulation</a></li>
+      <li><a href="Javascript/Module+12-Intermediate+Javascript+Part+2-+Using+External+Libraries.pdf" data-pdf="Javascript/Module+12-Intermediate+Javascript+Part+2-+Using+External+Libraries.pdf">jQuery</a></li>
+      <li><a href="Javascript/Module+13-Advanced+JavaScript-+Classes,+OOP+&+Algorithms.pdf" data-pdf="Javascript/Module+13-Advanced+JavaScript-+Classes,+OOP+&+Algorithms.pdf">Advanced JavaScript</a></li>
+    </ul>
 
-  <h2>WordPress</h2>
-  <ul>
-    <li><a href="Wordpress and react/Module+8-+Intro+to+Wordpress.pdf" target="_blank">Intro to WordPress and CMS</a></li>
-    <li><a href="Fundamentals and common practices/Module+17-+Web+tools+for+Website+Building+and+Maintenance.pdf" target="_blank">Creating Wordpress themes</a></li>
-  </ul>
+    <h2>React</h2>
+    <ul>
+      <li><a href="Wordpress and react/Module+15-Front-end+Frameworks+++CMS.pdf" data-pdf="Wordpress and react/Module+15-Front-end+Frameworks+++CMS.pdf">Front-end Frameworks and CMS</a></li>
+    </ul>
 
-  <h2>Other Topics</h2>
-  <ul>
-    <li><a href="Fundamentals and common practices/Module+5-+From+Web+Page+to+Website.pdf" target="_blank">Git & GitHub Basics and SEO</a></li>
-    <li><a href="Fundamentals and common practices/Module+6-+Web+Design+Fundamentals+and+Module+7-+Web+Design+Common+Practices.pdf" target="_blank">UI/UX concepts and web design common practices part 1</a></li>
-    <li><a href="Fundamentals and common practices/Module+7-+Web+Design+Common+Practices.pdf" target="_blank">Web design common practices</a></li>
-    <li><a href="Fundamentals and common practices/Module+16-Web+Hosting+and+Web+Security+Concepts+.pdf" target="_blank">Web Hosting and Security concepts</a></li>
-    <li><a href="Fundamentals and common practices/Module+14-Communicating+on+the+Web-+HTTP_HTTPS,+APIs,+Async.pdf" target="_blank">Communicating with the Web,API's,Async</a></li>
-    <li><a href="Fundamentals and common practices/Module+17-+Web+tools+for+Website+Building+and+Maintenance.pdf" target="_blank">Tools for website building and maintenance (starts at page 37)</a></li>
-  </ul>
+    <h2>WordPress</h2>
+    <ul>
+      <li><a href="Wordpress and react/Module+8-+Intro+to+Wordpress.pdf" data-pdf="Wordpress and react/Module+8-+Intro+to+Wordpress.pdf">Intro to WordPress and CMS</a></li>
+      <li><a href="Fundamentals and common practices/Module+17-+Web+tools+for+Website+Building+and+Maintenance.pdf" data-pdf="Fundamentals and common practices/Module+17-+Web+tools+for+Website+Building+and+Maintenance.pdf">Creating WordPress themes</a></li>
+    </ul>
+
+    <h2>Other Topics</h2>
+    <ul>
+      <li><a href="Fundamentals and common practices/Module+5-+From+Web+Page+to+Website.pdf" data-pdf="Fundamentals and common practices/Module+5-+From+Web+Page+to+Website.pdf">Git & GitHub Basics and SEO</a></li>
+      <li><a href="Fundamentals and common practices/Module+6-+Web+Design+Fundamentals+and+Module+7-+Web+Design+Common+Practices.pdf" data-pdf="Fundamentals and common practices/Module+6-+Web+Design+Fundamentals+and+Module+7-+Web+Design+Common+Practices.pdf">UI/UX concepts and web design common practices part 1</a></li>
+      <li><a href="Fundamentals and common practices/Module+7-+Web+Design+Common+Practices.pdf" data-pdf="Fundamentals and common practices/Module+7-+Web+Design+Common+Practices.pdf">Web design common practices</a></li>
+      <li><a href="Fundamentals and common practices/Module+16-Web+Hosting+and+Web+Security+Concepts+.pdf" data-pdf="Fundamentals and common practices/Module+16-Web+Hosting+and+Web+Security+Concepts+.pdf">Web Hosting and Security concepts</a></li>
+      <li><a href="Fundamentals and common practices/Module+14-Communicating+on+the+Web-+HTTP_HTTPS,+APIs,+Async.pdf" data-pdf="Fundamentals and common practices/Module+14-Communicating+on+the+Web-+HTTP_HTTPS,+APIs,+Async.pdf">Communicating with the Web, APIs, Async</a></li>
+      <li><a href="Fundamentals and common practices/Module+17-+Web+tools+for+Website+Building+and+Maintenance.pdf" data-pdf="Fundamentals and common practices/Module+17-+Web+tools+for+Website+Building+and+Maintenance.pdf">Tools for website building and maintenance (starts at page 37)</a></li>
+    </ul>
+  </div>
 
   <script src="script.js"></script>
   <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(reg => console.log('SW registered', reg))
-      .catch(err => console.error('SW registration failed:', err));
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('SW registered', reg))
+        .catch(err => console.error('SW registration failed:', err));
+    }
+  </script>
 </body>
 </html>

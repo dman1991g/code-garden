@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PDF Library Hub</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <button id="closeBtn" class="close-btn">&times;</button>
+    <h2>Categories</h2>
+    <ul>
+      <li><a href="web-development.html">Web Development</a></li>
+      <li><a href="professional-dev.html">Professional Development</a></li>
+    </ul>
+  </div>
+
+  <!-- Page Content -->
+  <div id="main">
+    <header>
+      <button id="menuBtn">&#9776;</button>
+      <h1>Welcome to the PDF Library</h1>
+      <p>Select a category below to get started.</p>
+    </header>
+
+    <section class="card-container">
+      <div class="card">
+        <h3>Web Development</h3>
+        <p>HTML, CSS, JavaScript, React & more.</p>
+        <a href="web-development.html" class="card-link">Go to Section →</a>
+      </div>
+
+      <div class="card">
+        <h3>Professional Development</h3>
+        <p>Career skills, communication, and tools.</p>
+        <a href="professional-dev.html" class="card-link">Go to Section →</a>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

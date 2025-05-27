@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Video Library</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Playlist Viewer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    iframe {
+      width: 100%;
+      height: 360px;
+      border: none;
+    }
+  </style>
 </head>
 <body>
-  <div id="video-container">
-    <h1>YouTube Playlist Viewer</h1>
-    <div id="player"></div>
-    <ul id="video-list"></ul>
-  </div>
-
-  <script src="https://www.youtube.com/iframe_api"></script>
-  <script src="youtube-playlist.js"></script>
+  <h1>My YouTube Playlist</h1>
+  <iframe 
+    src="https://www.youtube.com/embed/videoseries?list=PL5B8BW6JuITredBRdo6kkrO2yDeD2SUDg" 
+    allowfullscreen>
+  </iframe>
 </body>
 </html>

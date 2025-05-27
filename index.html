@@ -6,42 +6,19 @@
   <title>PDF Library Hub</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
-  <style>
-
-  nav {
-  background-color: #333;
-  padding: 1rem;
-}
-
-nav ul {
-  display: flex;
-  justify-content: center; /* or 'flex-start' or 'flex-end' */
-  gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-  </style>
-</head>
-<body>
-  <button id="installBtn" style="display: none;">Install App</button>
+  
+  <body>
   <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="web-development.html">Web Development</a></li>
-    <li><a href="professional-dev.html">Professional Development</a></li>
-    <li><a href="video-viewer.html">Video Viewer</a></li>
-  </ul>
+  <div class="nav-container">
+    <h1 class="logo">My Site</h1>
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="web-development.html">Web Development</a></li>
+      <li><a href="professional-dev.html">Professional Development</a></li>
+      <li><a href="video-viewer.html">Video Viewer</a></li>
+    </ul>
+  </div>
 </nav>
   <button id="installBtn" style="display: none;">Install App</button>
       <h1>Welcome to the PDF Library</h1>

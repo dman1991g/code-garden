@@ -1,5 +1,5 @@
 const API_KEY = 'AIzaSyBYoYakgN_QlpFRXlkUB3q5gRg9h7IGqd0'; // Replace with your key
-const PLAYLIST_ID = 'https://youtube.com/playlist?list=PL5B8BW6JuITredBRdo6kkrO2yDeD2SUDg&si=plCKjYnoAciCggdZ'; // Replace with your playlist ID
+const PLAYLIST_ID = 'PL5B8BW6JuITredBRdo6kkrO2yDeD2SUDg'; // Replace with your playlist ID
 let player;
 
 function onYouTubeIframeAPIReady() {

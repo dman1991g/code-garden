@@ -8,68 +8,41 @@
   <link rel="manifest" href="manifest.json" />
   <style>
 
-      /* Top navigation */
-    nav {
-      background-color: #333;
-      color: white;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  nav {
+  background-color: #333;
+  padding: 1rem;
+}
 
-    nav h1 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
+nav ul {
+  display: flex;
+  justify-content: center; /* or 'flex-start' or 'flex-end' */
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 15px;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    /* Content */
-    .container {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      background: white;
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 5px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-
-    li a {
-      text-decoration: none;
-      color: #0066cc;
-    }
-
-    li a:hover {
-      text-decoration: underline;
-    }
+nav a:hover {
+  text-decoration: underline;
+}
   </style>
 </head>
 <body>
   <button id="installBtn" style="display: none;">Install App</button>
   <nav>
-    <h1>PDF Collection</h1>
-    <div>
-      <a href="index.html">Home</a>
-      <a href="web-development.html">web development</a>
-      <a href="professional-dev.html">professional development</a>
-      <a href="video-viewer.html">video viewer</a>
-    </div>
-  </nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="web-development.html">Web Development</a></li>
+    <li><a href="professional-dev.html">Professional Development</a></li>
+    <li><a href="video-viewer.html">Video Viewer</a></li>
+  </ul>
+</nav>
   <button id="installBtn" style="display: none;">Install App</button>
       <h1>Welcome to the PDF Library</h1>
       <p>Select a category below to get started.</p>

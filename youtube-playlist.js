@@ -1,3 +1,16 @@
+// Collapsible nav menu toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+});
+
+// YouTube player setup
 const API_KEY = 'AIzaSyBYoYakgN_QlpFRXlkUB3q5gRg9h7IGqd0'; // Replace with your key
 const PLAYLIST_ID = 'PL5B8BW6JuITredBRdo6kkrO2yDeD2SUDg'; // Replace with your playlist ID
 let player;

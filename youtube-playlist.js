@@ -18,7 +18,7 @@ let player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '390',
-    width: '640',
+    width: '450',
     videoId: '', // will set this later
     events: {
       'onReady': loadPlaylistVideos

@@ -4,8 +4,8 @@ const FILES_TO_CACHE = [
   "/",                  // root
   "/index.html",        // main page
   "/style.css",         // styling
-  "/web-development.html"
-  "/professional-dev.html"
+  "/web-development.html",
+  "/professional-dev.html",
 
   // HTML PDFs
   "/HTML/Module+1-+Introduction+to+Software_Web+Development.pdf",

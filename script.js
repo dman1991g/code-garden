@@ -1,5 +1,3 @@
-Here is my script.js file that needs altered 
-
 import { auth, database } from './firebaseConfig.js';
 import {
   onAuthStateChanged,

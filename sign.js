@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       await updateProfile(user, { displayName: username });
       await set(ref(database, 'usernames/' + user.uid), username);
 
-      window.location.href = 'home.html';
+      window.location.href = 'index.html';
     } catch (error) {
       alert(error.message);
     }

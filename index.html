@@ -7,27 +7,30 @@
   <link rel="stylesheet" href="style.css"/>
   <link rel="manifest" href="manifest.json"/>
 </head>
-  
-  <body>
+
+<body>
   <header>
-  <nav>
-  <div class="nav-container">
-    <h1 class="logo">My Site</h1>
-    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="web-development.html">Web Development</a></li>
-      <li><a href="professional-dev.html">Professional Development</a></li>
-      <li><a href="video-viewer.html">Video Viewer</a></li>
-      <li><a href="https://dman1991g.github.io/Social-media-2/index.html">Community</a></li>
-      <li><a href="signin.html">signin</a></li>
-    </ul>
-  </div>
-</nav>
+    <nav>
+      <div class="nav-container">
+        <h1 class="logo">My Site</h1>
+        <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="web-development.html">Web Development</a></li>
+          <li><a href="professional-dev.html">Professional Development</a></li>
+          <li><a href="video-viewer.html">Video Viewer</a></li>
+          <li><a href="https://dman1991g.github.io/Social-media-2/index.html">Community</a></li>
+          <li><a href="signin.html">Sign In</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
   <button id="installBtn" style="display: none;">Install App</button>
-      <h1>Welcome to the PDF Library</h1>
-      <p>Select a category below to get started.</p>
-    </header>
+
+  <main>
+    <h1>Welcome to the PDF Library</h1>
+    <p>Select a category below to get started.</p>
 
     <section class="card-container">
       <div class="card">
@@ -41,27 +44,33 @@
         <p>Career skills, communication, and tools.</p>
         <a href="professional-dev.html" class="card-link">Go to Section →</a>
       </div>
-      
-       <div class="card">
-        <h3>Video viewer</h3>
+
+      <div class="card">
+        <h3>Video Viewer</h3>
         <p>View videos to help learn basic coding skills.</p>
         <a href="video-viewer.html" class="card-link">Go to Section →</a>
       </div>
-      <div class="card">
-  <h3>👥 Join the Community</h3>
-  <p>Share your projects, ask questions, and connect with other learners.</p>
-  <a href="https://dman1991g.github.io/Social-media-2/index.html" class="card-link" target="_blank">Go to Community →</a>
-</div>
-    </section>
-  </div>
-  <!-- Firebase SDKs -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
 
-<!-- Your Firebase config -->
-<script type="module" src="firebaseConfig.js"></script>
-  <script src="script.js"></script>
+      <div class="card">
+        <h3>👥 Join the Community</h3>
+        <p>Share your projects, ask questions, and connect with other learners.</p>
+        <a href="https://dman1991g.github.io/Social-media-2/index.html" class="card-link" target="_blank">Go to Community →</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+
+  <!-- Your Firebase config -->
+  <script type="module" src="firebaseConfig.js"></script>
+
+  <!-- Main logic -->
+  <script type="module" src="script.js"></script>
+
+  <!-- Register service worker -->
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')

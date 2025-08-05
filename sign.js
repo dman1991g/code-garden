@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      window.location.href = 'home.html';
+      window.location.href = 'index.html';
     } catch (error) {
       alert(error.message);
     }
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const result = await signInAnonymously(auth);
       console.log('Signed in as guest:', result.user.uid);
-      window.location.href = 'home.html';
+      window.location.href = 'index.html';
     } catch (error) {
       alert('Failed to sign in as guest: ' + error.message);
     }
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Redirect if already signed in
   onAuthStateChanged(auth, user => {
     if (user) {
-      window.location.href = 'home.html';
+      window.location.href = 'index.html';
     }
   });
 });

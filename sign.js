@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       await updateProfile(user, { displayName: username });
       await set(ref(database, 'usernames/' + user.uid), username);
 
-      window.location.href = 'index.html';
+      window.location.href = "index.html";
     } catch (error) {
       alert(error.message);
     }
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      window.location.href = 'index.html';
+      window.location.href = "index.html";
     } catch (error) {
       alert(error.message);
     }
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Redirect if already signed in
   onAuthStateChanged(auth, user => {
     if (user) {
-      window.location.href = 'index.html';
+      window.location.href = "index.html";
     }
   });
 });

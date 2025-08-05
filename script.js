@@ -47,11 +47,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // PROGRESS TRACKING
   onAuthStateChanged(auth, (user) => {
     if (user && !user.isAnonymous) {
-      alert("✅ Firebase is working and user is signed in!");
       showCheckboxes();
       loadProgress(user.uid);
     } else {
-      alert("⚠️ Firebase is working, but user is not signed in.");
       hideCheckboxes();
     }
   });
@@ -93,13 +91,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function saveProgress(uid, lessonId, isChecked) {
     const lessonRef = dbRef(database, `progress/${uid}/${lessonId}`);
     if (isChecked) {
-      set(lessonRef, true).then(() => {
-        alert(`✅ Saved progress for: ${lessonId}`);
-      });
+      set(lessonRef, true);
     } else {
-      set(lessonRef, null).then(() => {
-        alert(`🗑️ Removed progress for: ${lessonId}`);
-      });
+      set(lessonRef, null);
     }
   }
 });

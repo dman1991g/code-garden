@@ -9,7 +9,7 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
 
 document.addEventListener('DOMContentLoaded', function () {
-  // === NAV TOGGLE ===
+  // NAV TOGGLE
   const toggleBtn = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
@@ -19,14 +19,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // === INSTALL PROMPT ===
-  let deferredPrompt;
+  // INSTALL PROMPT
   const installBtn = document.getElementById('installBtn');
+  let deferredPrompt;
 
-  if (installBtn) {
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+
+    if (installBtn) {
       installBtn.style.display = 'inline-block';
 
       installBtn.addEventListener('click', () => {
@@ -34,31 +35,35 @@ document.addEventListener('DOMContentLoaded', function () {
         deferredPrompt.prompt();
 
         deferredPrompt.userChoice.then((choiceResult) => {
-          console.log(`User ${choiceResult.outcome === 'accepted' ? 'accepted' : 'dismissed'} the install prompt`);
+          console.log(
+            `User ${choiceResult.outcome === 'accepted' ? 'accepted' : 'dismissed'} the install prompt`
+          );
           deferredPrompt = null;
         });
       });
-    });
-  }
+    }
+  });
 
-  // === PROGRESS TRACKING ===
+  // PROGRESS TRACKING
   onAuthStateChanged(auth, (user) => {
     if (user && !user.isAnonymous) {
+      alert("✅ Firebase is working and user is signed in!");
       showCheckboxes();
       loadProgress(user.uid);
     } else {
+      alert("⚠️ Firebase is working, but user is not signed in.");
       hideCheckboxes();
     }
   });
 
   function showCheckboxes() {
-    document.querySelectorAll('.lesson-checkbox').forEach(cb => {
+    document.querySelectorAll('.lesson-checkbox, input[type="checkbox"][data-lesson]').forEach(cb => {
       cb.style.display = 'inline-block';
     });
   }
 
   function hideCheckboxes() {
-    document.querySelectorAll('.lesson-checkbox').forEach(cb => {
+    document.querySelectorAll('.lesson-checkbox, input[type="checkbox"][data-lesson]').forEach(cb => {
       cb.style.display = 'none';
     });
   }
@@ -69,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (snapshot.exists()) {
         const completedLessons = snapshot.val();
         Object.keys(completedLessons).forEach(lessonId => {
-          const checkbox = document.getElementById(lessonId);
+          const checkbox = document.querySelector(`[data-lesson="${lessonId}"]`);
           if (checkbox) {
             checkbox.checked = true;
           }
@@ -78,9 +83,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Attach listeners to checkboxes
-    document.querySelectorAll('.lesson-checkbox').forEach(cb => {
+    document.querySelectorAll('input[type="checkbox"][data-lesson]').forEach(cb => {
       cb.addEventListener('change', () => {
-        saveProgress(uid, cb.id, cb.checked);
+        saveProgress(uid, cb.dataset.lesson, cb.checked);
       });
     });
   }
@@ -88,9 +93,13 @@ document.addEventListener('DOMContentLoaded', function () {
   function saveProgress(uid, lessonId, isChecked) {
     const lessonRef = dbRef(database, `progress/${uid}/${lessonId}`);
     if (isChecked) {
-      set(lessonRef, true);
+      set(lessonRef, true).then(() => {
+        alert(`✅ Saved progress for: ${lessonId}`);
+      });
     } else {
-      set(lessonRef, null); // Remove if unchecked
+      set(lessonRef, null).then(() => {
+        alert(`🗑️ Removed progress for: ${lessonId}`);
+      });
     }
   }
 });

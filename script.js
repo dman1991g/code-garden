@@ -9,33 +9,42 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
 
 document.addEventListener('DOMContentLoaded', function () {
+  // NAV TOGGLE FIXED (with null checks)
   const toggleBtn = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
-  toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
 
+  // INSTALL PROMPT
   const installBtn = document.getElementById('installBtn');
   let deferredPrompt;
 
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    installBtn.style.display = 'inline-block';
 
-    installBtn.addEventListener('click', () => {
-      installBtn.style.display = 'none';
-      deferredPrompt.prompt();
+    if (installBtn) {
+      installBtn.style.display = 'inline-block';
 
-      deferredPrompt.userChoice.then((choiceResult) => {
-        console.log(`User ${choiceResult.outcome === 'accepted' ? 'accepted' : 'dismissed'} the install prompt`);
-        deferredPrompt = null;
+      installBtn.addEventListener('click', () => {
+        installBtn.style.display = 'none';
+        deferredPrompt.prompt();
+
+        deferredPrompt.userChoice.then((choiceResult) => {
+          console.log(
+            `User ${choiceResult.outcome === 'accepted' ? 'accepted' : 'dismissed'} the install prompt`
+          );
+          deferredPrompt = null;
+        });
       });
-    });
+    }
   });
 
-  // Progress Tracking Setup
+  // PROGRESS TRACKING
   onAuthStateChanged(auth, (user) => {
     if (user && !user.isAnonymous) {
       showCheckboxes();

@@ -12,20 +12,27 @@
   </header>
 
   <main>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="html">HTML</button>
+      <button class="tab-btn" data-tab="css">CSS</button>
+      <button class="tab-btn" data-tab="js">JavaScript</button>
+    </div>
+
+    <!-- Editors -->
     <section class="editor-container">
-      <label for="html-editor">HTML:</label>
-      <textarea id="html-editor"></textarea>
-
-      <label for="css-editor">CSS:</label>
-      <textarea id="css-editor"></textarea>
-
-      <label for="js-editor">JavaScript:</label>
-      <textarea id="js-editor"></textarea>
-
-      <button id="run-btn">Run Code</button>
-      <button id="reset-btn">Reset</button>
+      <textarea id="editor-html" class="editor"></textarea>
+      <textarea id="editor-css" class="editor hidden"></textarea>
+      <textarea id="editor-js" class="editor hidden"></textarea>
     </section>
 
+    <!-- Controls -->
+    <div class="controls">
+      <button id="run-btn">Run Code</button>
+      <button id="reset-btn">Reset</button>
+    </div>
+
+    <!-- Preview -->
     <section class="preview-container">
       <h2>Preview</h2>
       <iframe id="preview"></iframe>

@@ -1,7 +1,7 @@
 {
-  "name": "Web Development PDF Viewer",
-  "short_name": "WebDev Viewer",
-  "start_url": "https://dman1991g.github.io/Web-development/index.html",
+  "name": "Code Garden",
+  "short_name": "Code Garden",
+  "start_url": "https://dman1991g.github.io/code-garden/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#317EFB",

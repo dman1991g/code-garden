@@ -96,4 +96,18 @@ document.addEventListener('DOMContentLoaded', function () {
       set(lessonRef, null);
     }
   }
+  
+  // Fun rotating console messages
+const messages = [
+  "Hey! Have you broken CodeGarden yet? 🌱😎",
+  "You almost had it! 😏",
+  "Are you sure you didn’t break the console? 🤔",
+  "Still trying? Keep going!",
+  "CodeGarden is unbreakable! 🌱"
+];
+
+setInterval(() => {
+  const msg = messages[Math.floor(Math.random() * messages.length)];
+  console.log("%c" + msg, "color: teal; font-size: 16px; font-weight: bold;");
+}, 5000); // Runs every 5 seconds
 });

@@ -1,26 +1,16 @@
 import { auth, database } from 'firebaseConfig.js';
-import {
-  onAuthStateChanged
-} from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
-import {
-  ref as dbRef,
-  set,
-  get
-} from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
+import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
+import { ref as dbRef, set, get } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   // NAV TOGGLE
   const toggleBtn = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
   if (toggleBtn && navLinks) {
-    const toggleMenu = (e) => {
-      e.preventDefault(); // Prevent default touch/click behavior
+    toggleBtn.addEventListener('click', () => {
       navLinks.classList.toggle('active');
-    };
-
-    toggleBtn.addEventListener('click', toggleMenu);
-    toggleBtn.addEventListener('touchstart', toggleMenu); // Fix for mobile devices
+    });
   }
 
   // INSTALL PROMPT
@@ -77,14 +67,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const completedLessons = snapshot.val();
         Object.keys(completedLessons).forEach(lessonId => {
           const checkbox = document.querySelector(`[data-lesson="${lessonId}"]`);
-          if (checkbox) {
-            checkbox.checked = true;
-          }
+          if (checkbox) checkbox.checked = true;
         });
       }
     });
 
-    // Attach listeners to checkboxes
     document.querySelectorAll('input[type="checkbox"][data-lesson]').forEach(cb => {
       cb.addEventListener('change', () => {
         saveProgress(uid, cb.dataset.lesson, cb.checked);

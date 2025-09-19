@@ -3,17 +3,19 @@ import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.1/fir
 import { ref as dbRef, set, get } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // NAV TOGGLE
+  // =======================
+  // Mobile Drawer Toggle
+  // =======================
   const toggleBtn = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  const mobileMenu = document.querySelector('.mobile-menu');
 
-  if (toggleBtn && navLinks) {
-    toggleBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  }
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+  });
 
-  // INSTALL PROMPT
+  // =======================
+  // Install Prompt
+  // =======================
   const installBtn = document.getElementById('installBtn');
   let deferredPrompt;
 
@@ -38,7 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // PROGRESS TRACKING
+  // =======================
+  // Progress Tracking
+  // =======================
   onAuthStateChanged(auth, (user) => {
     if (user && !user.isAnonymous) {
       showCheckboxes();

@@ -14,9 +14,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const navLinks = document.querySelector('.nav-links');
 
   if (toggleBtn && navLinks) {
-    toggleBtn.addEventListener('click', () => {
+    const toggleMenu = (e) => {
+      e.preventDefault(); // Prevent default touch/click behavior
       navLinks.classList.toggle('active');
-    });
+    };
+
+    toggleBtn.addEventListener('click', toggleMenu);
+    toggleBtn.addEventListener('touchstart', toggleMenu); // Fix for mobile devices
   }
 
   // INSTALL PROMPT

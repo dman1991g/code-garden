@@ -9,26 +9,41 @@
 </head>
 
 <body>
+  <!-- =======================
+       Top Navigation
+  ======================= -->
   <header>
     <nav>
       <div class="nav-container">
         <h1 class="logo">My Site</h1>
         <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="web-development.html">Web Development</a></li>
-          <li><a href="professional-dev.html">Professional Development</a></li>
-          <li><a href="video-viewer.html">Video Viewer</a></li>
-          <li><a href="https://dman1991g.github.io/Social-media-2/index.html">Community</a></li>
-          <li><a href="signin.html">Sign In</a></li>
-          <li><a href="practice.html">practice</a></li>
-        </ul>
       </div>
     </nav>
   </header>
 
+  <!-- =======================
+       Mobile Drawer Menu
+  ======================= -->
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="web-development.html">Web Development</a></li>
+      <li><a href="professional-dev.html">Professional Development</a></li>
+      <li><a href="video-viewer.html">Video Viewer</a></li>
+      <li><a href="https://dman1991g.github.io/Social-media-2/index.html" target="_blank">Community</a></li>
+      <li><a href="signin.html">Sign In</a></li>
+      <li><a href="practice.html">Practice</a></li>
+    </ul>
+  </div>
+
+  <!-- =======================
+       Install Button
+  ======================= -->
   <button id="installBtn" style="display: none;">Install App</button>
 
+  <!-- =======================
+       Main Content
+  ======================= -->
   <main>
     <h1>Welcome to the PDF Library</h1>
     <p>Select a category below to get started.</p>
@@ -59,15 +74,21 @@
       </div>
     </section>
   </main>
-  <footer style="text-align: center; padding: 20px; background-color: #f0f0f0; margin-top: 20px;">
-  <p>Support CodeGarden 🌱</p>
-  <a href="https://venmo.com/dman1991g" target="_blank" 
-     style="text-decoration: none; color: white; background-color: #3d95ce; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-    💸 Donate with Venmo
-  </a>
-</footer>
 
-  <!-- Firebase SDKs -->
+  <!-- =======================
+       Footer
+  ======================= -->
+  <footer style="text-align: center; padding: 20px; background-color: #f0f0f0; margin-top: 20px;">
+    <p>Support CodeGarden 🌱</p>
+    <a href="https://venmo.com/dman1991g" target="_blank" 
+       style="text-decoration: none; color: white; background-color: #3d95ce; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+      💸 Donate with Venmo
+    </a>
+  </footer>
+
+  <!-- =======================
+       Firebase SDKs
+  ======================= -->
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>

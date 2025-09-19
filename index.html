@@ -10,20 +10,29 @@
 
 <body>
   <!-- =======================
-       Top Navigation
+       Header / Navigation
   ======================= -->
   <header>
     <nav>
       <div class="nav-container">
         <h1 class="logo">My Site</h1>
         <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+
+        <!-- Desktop nav links -->
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="web-development.html">Web Development</a></li>
+          <li><a href="professional-dev.html">Professional Development</a></li>
+          <li><a href="video-viewer.html">Video Viewer</a></li>
+          <li><a href="https://dman1991g.github.io/Social-media-2/index.html" target="_blank">Community</a></li>
+          <li><a href="signin.html">Sign In</a></li>
+          <li><a href="practice.html">Practice</a></li>
+        </ul>
       </div>
     </nav>
   </header>
 
-  <!-- =======================
-       Mobile Drawer Menu
-  ======================= -->
+  <!-- Mobile drawer menu -->
   <div class="mobile-menu">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -36,14 +45,9 @@
     </ul>
   </div>
 
-  <!-- =======================
-       Install Button
-  ======================= -->
   <button id="installBtn" style="display: none;">Install App</button>
 
-  <!-- =======================
-       Main Content
-  ======================= -->
+  <!-- Main content -->
   <main>
     <h1>Welcome to the PDF Library</h1>
     <p>Select a category below to get started.</p>
@@ -75,9 +79,7 @@
     </section>
   </main>
 
-  <!-- =======================
-       Footer
-  ======================= -->
+  <!-- Footer -->
   <footer style="text-align: center; padding: 20px; background-color: #f0f0f0; margin-top: 20px;">
     <p>Support CodeGarden 🌱</p>
     <a href="https://venmo.com/dman1991g" target="_blank" 
@@ -86,20 +88,14 @@
     </a>
   </footer>
 
-  <!-- =======================
-       Firebase SDKs
-  ======================= -->
+  <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
 
-  <!-- Your Firebase config -->
   <script type="module" src="firebaseConfig.js"></script>
-
-  <!-- Main logic -->
   <script type="module" src="script.js"></script>
 
-  <!-- Register service worker -->
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')

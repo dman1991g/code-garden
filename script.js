@@ -1,22 +1,27 @@
-import { auth, database } from 'firebaseConfig.js';
+import { auth, database } from './firebaseConfig.js';
 import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
 import { ref as dbRef, set, get } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  // =======================
+  // Mobile menu toggle
+  // =======================
   const toggleBtn = document.querySelector('.menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
 
-  // Toggle drawer
-  toggleBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-  });
+  if (toggleBtn && mobileMenu) {
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
 
-  // Close drawer when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!mobileMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
-      mobileMenu.classList.remove('active');
-    }
-  });
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+      }
+    });
+  }
 
   // =======================
   // Install prompt
@@ -27,13 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
+
     if (installBtn) {
       installBtn.style.display = 'inline-block';
+
       installBtn.addEventListener('click', () => {
         installBtn.style.display = 'none';
         deferredPrompt.prompt();
+
         deferredPrompt.userChoice.then((choiceResult) => {
-          console.log(`User ${choiceResult.outcome === 'accepted' ? 'accepted' : 'dismissed'} the install prompt`);
+          console.log(
+            `User ${choiceResult.outcome === 'accepted' ? 'accepted' : 'dismissed'} the install prompt`
+          );
           deferredPrompt = null;
         });
       });
@@ -75,6 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     });
+
+    // Attach listeners to checkboxes
     document.querySelectorAll('input[type="checkbox"][data-lesson]').forEach(cb => {
       cb.addEventListener('change', () => {
         saveProgress(uid, cb.dataset.lesson, cb.checked);
@@ -84,4 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function saveProgress(uid, lessonId, isChecked) {
     const lessonRef = dbRef(database, `progress/${uid}/${lessonId}`);
-    if (isChecked
+    if (isChecked) {
+      set(lessonRef, true);
+    } else {
+      set(lessonRef, null);
+    }
+  }
+
+});

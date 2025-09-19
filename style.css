@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   max-width: 800px;
@@ -41,7 +42,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Sidebar styles */
+/* Sidebar Styles */
 .sidebar {
   position: fixed;
   top: 0;
@@ -149,23 +150,32 @@ nav {
   border: none;
   color: white;
   cursor: pointer;
+  z-index: 1100; /* on top of nav-links */
 }
 
-/* Responsive Behavior */
+/* Responsive Mobile Menu */
 @media (max-width: 768px) {
+  /* Hide desktop nav links off-canvas */
   .nav-links {
-    display: none;
+    position: fixed;       /* overlay menu */
+    top: 0;
+    right: -100%;          /* start off-screen */
+    width: 70%;
+    height: 100%;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
     background-color: #333;
-    padding: 1rem;
+    padding: 2rem;
+    transition: right 0.3s ease;
+    z-index: 1000;         /* above content */
   }
 
+  /* Slide menu into view when active */
   .nav-links.active {
-    display: flex;
+    right: 0;
   }
 
+  /* Show hamburger menu button */
   .menu-toggle {
     display: block;
   }

@@ -157,27 +157,25 @@ nav {
 
 /* Responsive Mobile Menu */
 @media (max-width: 768px) {
-  /* Hide desktop nav links off-canvas */
   .nav-links {
-    position: fixed;       /* overlay menu */
+    position: fixed;
     top: 0;
-    right: -100%;          /* start off-screen */
+    right: 0;
     width: 70%;
     height: 100%;
     flex-direction: column;
     gap: 10px;
     background-color: #333;
     padding: 2rem;
-    transition: right 0.3s ease;
-    z-index: 1500;         /* below menu-toggle */
+    transition: transform 0.3s ease;
+    z-index: 1500;
+    transform: translateX(100%); /* start off-screen */
   }
 
-  /* Slide menu into view when active */
   .nav-links.active {
-    right: 0;
+    transform: translateX(0); /* slide into view */
   }
 
-  /* Show hamburger menu button */
   .menu-toggle {
     display: block;
   }

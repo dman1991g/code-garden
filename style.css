@@ -115,6 +115,7 @@ nav {
   padding: 1rem;
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
 }
 
 .logo {
@@ -150,7 +151,8 @@ nav {
   border: none;
   color: white;
   cursor: pointer;
-  z-index: 1100; /* on top of nav-links */
+  position: relative;
+  z-index: 2000; /* above nav-links */
 }
 
 /* Responsive Mobile Menu */
@@ -167,7 +169,7 @@ nav {
     background-color: #333;
     padding: 2rem;
     transition: right 0.3s ease;
-    z-index: 1000;         /* above content */
+    z-index: 1500;         /* below menu-toggle */
   }
 
   /* Slide menu into view when active */

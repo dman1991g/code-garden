@@ -3,12 +3,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+  // =======================
+  // Mobile menu toggle
+  // =======================
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  if (toggleBtn && mobileMenu) {
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+      }
     });
   }
-});
 
 // YouTube player setup
 const API_KEY = 'AIzaSyBYoYakgN_QlpFRXlkUB3q5gRg9h7IGqd0'; // Replace with your key

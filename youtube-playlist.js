@@ -1,9 +1,4 @@
-// Collapsible nav menu toggle
-document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  // =======================
+// =======================
   // Mobile menu toggle
   // =======================
   const toggleBtn = document.querySelector('.menu-toggle');

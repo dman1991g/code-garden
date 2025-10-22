@@ -63,6 +63,20 @@
       <li><a href="Professional development/Salesforce Resume Guide (US & CAN).pdf">Salesdorce resume guide</a></li>
     </ul>
   </div>
-  <script src="script.js"></script>
+    <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+
+  <script type="module" src="firebaseConfig.js"></script>
+  <script type="module" src="script.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('SW registered', reg))
+        .catch(err => console.error('SW registration failed:', err));
+    }
+  </script>
 </body>
 </html>
